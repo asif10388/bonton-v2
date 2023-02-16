@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="px-4 md:px-0 max-w-7xl mx-auto bg-bonton-yellow md:-mt-[60px]">
+  <section
+    class="h-full flex flex-col md:flex-row justify-center items-center md:justify-between px-4 md:px-24 py-8 relative"
+  >
+    <div
+      class="text-bonton-green text-center hidden md:block speech-bubble absolute top-[-33%] left-[33px] z-50 text-xl md:text-2xl"
+    >
+      যেকোনো প্রয়োজনে সাপোর্ট নিন, কল করুন
+    </div>
+    <div class="flex items-center relative mb-4 md:mb-0">
+      <img
+        alt="the guy"
+        class="w-20 h-20 bg-white object-contain object-center flex-shrink-0 rounded-full mr-5 border-2 border-black"
+        src="./bonton-logo.svg"
+      />
+      <div class="flex-grow">
+        <h2 class="font-bold text:xl md:text-2xl">কামরুল হাসান</h2>
+        <p class="text:lg md:text-xl">
+          নেটওয়ার্ক কনসালটেন্ট{" "}
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <Icon
+        pack="mdi"
+        name="phone"
+        class="w-6 h-6 rotate-6 mr-5 text-bonton-green"
+      />
+      <span class="text-xl md:text-3xl mr-5">
+        <a href="tel:+8809613829105">+8809613829105</a>
+      </span>
+      <button
+        class="text-md md:text-lg mr-5 py-1 px-5 bg-[#005D6A] text-bonton-yellow"
+      >
+        <a href="tel:+880171111111">কল করুন</a>
+      </button>
+    </div>
+  </section>
+</div>

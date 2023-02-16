@@ -1,0 +1,80 @@
+---
+---
+
+<script>
+  declare global {
+    interface Window {
+      google: any;
+    }
+  }
+
+  import { Loader } from "@googlemaps/js-api-loader";
+
+  let map: any;
+
+  const loader = new Loader({
+    apiKey: "AIzaSyBIA1Gc3jOTZxqiy68P8ICr4uXjBF84BZM",
+    version: "weekly",
+  });
+
+  const locations = [
+    {
+      lat: 26.1239113,
+      lng: 88.9600845,
+    },
+    {
+      lat: 24.9828862,
+      lng: 89.8123954,
+    },
+    {
+      lat: 25.564994,
+      lng: 89.5129752,
+    },
+    {
+      lat: 25.6226555,
+      lng: 88.6891861,
+    },
+    {
+      lat: 25.8548575,
+      lng: 88.3413217,
+    },
+    {
+      lat: 24.5605896,
+      lng: 89.918847,
+    },
+    {
+      lat: 24.3979077,
+      lng: 88.9754465,
+    },
+  ];
+
+  function initMap() {
+    map = new window.google.maps.Map(
+      document.getElementById("map") as HTMLElement,
+      {
+        center: { lat: 25.3281959, lng: 89.5130131 },
+        zoom: 8,
+      }
+    );
+
+    locations.forEach((location) => {
+      new window.google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    });
+  }
+
+  loader.load().then(() => {
+    initMap();
+  });
+</script>
+
+<section class="px-4 md:px-0 py-20 max-w-7xl mx-auto text-bonton-green">
+  <h1 class="text-3xl md:text-6xl font-bold mb-10">আমাদের কাভারেজ</h1>
+  <div class="flex flex-col items-center md:flex-row">
+    <div class="w-full h-[400px] mb-10 md:mb-0" id="map">
+      <!-- MAP GOES HERE -->
+    </div>
+  </div>
+</section>

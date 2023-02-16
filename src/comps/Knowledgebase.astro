@@ -1,0 +1,55 @@
+---
+const videoData = [
+  {
+    title: "বণ্টন রাউটার কিভাবে সেট আপ করবো?",
+    link: "https://www.youtube.com/watch?v=02C36TQgxJY&t=17s",
+  },
+  {
+    title: "বন্টন ড্যাশবোর্ড কি? কিভাবে টোকেন বানাবো?",
+    link: "#",
+  },
+  {
+    title: "নিজের রাউটারে Bonton OS কিভাবে ইন্সটল করবো?",
+    link: "#",
+  },
+  {
+    title: "TP-Link দিয়ে কিভাবে extend করবেন Bonton OS router?",
+    link: "https://www.youtube.com/watch?v=z5ay9M9qXl8&t=14s",
+  },
+  {
+    title: "টোকেন কিনে কিভাবে ব্যবহার করবো?",
+    link: "#",
+  },
+];
+---
+
+<section class="px-4 md:px-0 py-20 max-w-7xl mx-auto">
+  <h1 class="text-3xl md:text-6xl font-bold mb-5 text-bonton-green">
+    টং কি এবং কিভাবে কাজ করে
+  </h1>
+
+  <div class="flex flex-wrap flex-col md:flex-row">
+    {
+      videoData.map((video) => (
+        <a
+          href={video.link}
+          target="_blank"
+          class="py-4 md:w-1/2 cursor-pointer"
+        >
+          <div class="h-full flex flex-row">
+            <div class="mr-4 md:mr-0 w-1/4">
+              <img
+                alt="video thumbnail"
+                class="flex-shrink-0 w-18 h-16 object-contain object-center sm:mb-0 mb-4"
+                src="./thumbnail-red.png"
+              />
+            </div>
+            <div class="flex-grow sm:pl-4 w-3/4">
+              <h2 class="text-xl md:text-3xl font-bold">{video.title}</h2>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

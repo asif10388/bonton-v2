@@ -1,0 +1,26 @@
+---
+import "@fontsource/roboto";
+
+import Header from "../comps/Header.astro";
+import Footer from "../comps/Footer.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+  </head>
+  <body>
+    <Header title={title} />
+    <h1>{title}</h1>
+    <slot />
+    <Footer />
+  </body>
+</html>

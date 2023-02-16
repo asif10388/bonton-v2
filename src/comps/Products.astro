@@ -1,0 +1,147 @@
+---
+import { Icon } from "astro-icon";
+
+const productData = [
+  {
+    packageName: "Tong Basic",
+    description: "Xiaomi Router 4c",
+    price: "2,400",
+    imgUrl: "./1.png",
+  },
+  {
+    packageName: "Tong Elite",
+    description: "Xiaomi Router 4a",
+    price: "3,000",
+    imgUrl: "./2.png",
+  },
+  {
+    packageName: "Tong Pro",
+    description: "Xiaomi Router 4a Gigabit",
+    price: "4,000",
+    imgUrl: "./3.png",
+  },
+  {
+    packageName: "Tong Max",
+    description: "TP Link Archer C60",
+    price: "4,800",
+    imgUrl: "./4.png",
+  },
+  {
+    packageName: "Tong Ultra",
+    description: "TP Link Archer A6 V3",
+    price: "5,300",
+    imgUrl: "./5.png",
+  },
+  {
+    packageName: "Tong Leader",
+    description: "TP Link EAP 225",
+    price: "12,000",
+    imgUrl: "./6.png",
+  },
+];
+---
+
+<section class="px-4 md:px-0 py-20 max-w-7xl mx-auto text-bonton-green">
+  <div class="flex flex-col md:flex-row justify-between items-center mb-5">
+    <h1 class="text-3xl md:text-6xl font-bold">আমাদের প্যাকেজসমূহ</h1>
+
+    <button class="inline-flex text-xl">
+      <span class="mr-2">সকল প্যাকেজ দেখুন</span>
+      <Icon
+        pack="ic"
+        name="sharp-arrow-right-alt"
+        class="w-10 h-10 inline-block mr-2"
+      />
+    </button>
+  </div>
+
+  <div class="relative flex flex-wrap">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {
+          productData.map((product, index) => (
+            <div class="swiper-slide">
+              <div class="m-10 md:m-0">
+                <a class="block relative border-2 border-bonton-green relative">
+                  <div class="bg-bonton-yellow border-2 border-r-0 border-bonton-green absolute bottom-[5%] right-0 z-50 bg-white py-1 px-4">
+                    <span class="font-bold text-xl md:text-2xl">
+                      {product.price} /-
+                    </span>
+                  </div>
+                  <img
+                    alt={product.packageName}
+                    class="object-contain object-center w-[280px] h-[340px] block"
+                    src={product.imgUrl}
+                  />
+                </a>
+                <div class="mt-4 text-black">
+                  <h2 class="text-xl md:text-3xl font-bold">
+                    {product.packageName}
+                  </h2>
+                  <p class="text-lg md:text-2xl mt-1">{product.description}</p>
+                </div>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdJfU6wuMoj9dUclUlYZtF93GuIMl6_kNaQB3ugaKa0tgHfRw/viewform"
+                  target="_blank"
+                  class="inline-block w-full text-center bg-bonton-yellow text-xl md:text-3xl mt-4 w-full py-2 px-6 justify-center font-bold"
+                >
+                  অর্ডার করুন
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <button
+      class="swiper-button-custom-prev flex justify-center items-center w-16 h-16 border-2 border-bonton-green rounded-full absolute z-50 top-[35%] md:top-[30%] left-[5%] md:left-[-3%] bg-white"
+    >
+      <Icon
+        pack="ic"
+        name="round-chevron-left"
+        class="w-12 h-12 inline-block mr-1"
+      />
+    </button>
+    <button
+      class="swiper-button-custom-next flex justify-center items-center w-16 h-16 border-2 border-bonton-green rounded-full absolute z-50 top-[35%] md:top-[30%] right-[5%] md:right-[-3%] bg-white"
+    >
+      <Icon
+        pack="ic"
+        name="round-chevron-right"
+        class="w-12 h-12 inline-block"
+      />
+    </button>
+  </div>
+
+  <button
+    class="mt-10 w-full inline-flex items-center justify-center text-2xl md:text-4xl"
+  >
+    <span>সকল প্যাকেজ</span>
+    <Icon
+      pack="ic"
+      name="sharp-arrow-right-alt"
+      class="w-10 h-10 inline-block mr-2"
+    />
+  </button>
+</section>
+
+<script>
+  const swiper = new Swiper(".swiper", {
+    direction: "horizontal",
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-custom-next",
+      prevEl: ".swiper-button-custom-prev",
+    },
+  });
+</script>
