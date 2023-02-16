@@ -9,6 +9,9 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@astrojs/tailwind": "^3.0.1",
     "@fontsource/roboto": "^4.5.8",
