@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  bonton-tong-site:
+    container_name: bonton-bonton-tong-site
+    restart: always
+
+    image: registry.bonton.app:5000/bonton-tong-site:latest
+    build:
+      args:
+        PARTIALIZE: "bonton-tong-site"
+      context: ./turbo
+      dockerfile: Dockerfile
+
+    working_dir: /mono/turbo/apps/bonton-tong-site
+    command: yarn start

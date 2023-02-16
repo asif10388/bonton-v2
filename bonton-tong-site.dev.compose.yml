@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  bonton-tong-site:
+    container_name: bonton-bonton-tong-site-dev
+
+    ports:
+      - "${BONTON_TONG_SITE_HTTP_PORT:-14012}:3000"
+      - "${BONTON_TONG_SITE_DEBUG_PORT:-12012}:9229"
+
+    build:
+      context: ./turbo
+      dockerfile: Dockerfile-dev
+
+    working_dir: /mono/turbo/apps/bonton-tong-site
+    command: yarn dev
+
+    volumes:
+      - ./turbo/:/mono/turbo
